@@ -29,8 +29,9 @@ module.exports = (sequelize,dataTypes)=>{
         Movie.belongsToMany(models.Character, {
             through: 'characters_movies',
             as:'characters',
-            foreignKey:'character_id'
+            foreignKey:'movie_id'
         });
+        //Movie.belongsToMany(models.Character, { through: 'CharacterMovie' });
     };
 
     return Movie

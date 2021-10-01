@@ -1,13 +1,13 @@
-const {Movie} = require('../models');
-const controller ={
-    getAll: async (req,res)=>{
+const { Movie, CharacterMovie } = require('../models');
+const controller = {
+    getAll: async (req, res) => {
         try {
-            const {order,...query}=req.query;
+            const { order, ...query } = req.query;
             const movies = await Movie.findAll({
-                attributes:['image','name','created_at'],
-                where:query,
+                attributes: ['image', 'name', 'created_at'],
+                where: query,
                 order: [
-                    ['created_at', order||'ASC']
+                    ['created_at', order || 'ASC']
                 ],
             });
             res.json({
@@ -15,24 +15,28 @@ const controller ={
             })
 
         } catch (error) {
-            res.status(404).json({
+            return res.status(404).json({
                 error
             })
         }
     },
-    getOne: async(req,res)=>{
+    getOne: async (req, res) => {
         try {
-            const {id} = req.params;
-            const movie = await Movie.findByPk(id,{
+            const { id } = req.params;
+            const movie = await Movie.findByPk(id, {
                 include: [
                     {
                         association: "genre",
+                        attributes:['name']
                     },
-                ]
+                    {
+                        association: "characters",
+                        attributes:['name','id']
+                    }
+                ],
             })
-            
-            return res.json({
-                movie:movie||'No existe la pelicula buscada'
+            res.json({
+                movie: movie || 'No existe la pelicula buscada'
             })
         } catch (error) {
             res.status(400).json({
@@ -40,11 +44,12 @@ const controller ={
             })
         }
     },
-    createMovie: async(req,res)=>{
+    createMovie: async (req, res) => {
         try {
             const data = req.body;
-            const movie = new Movie(data);
-            await movie.save();
+            const movie = await Movie.create(data);
+            if (data.characters)
+                movie.addCharacters(data.characters)
             res.json(
                 movie
             )
@@ -52,8 +57,47 @@ const controller ={
             res.status(400).json(
                 error
             )
-            
         }
+    },
+    updateMovie: async (req, res) => {
+        try {
+            const { id } = req.params;
+            const data = req.body;
+            const movie = await Movie.findByPk(id);
+            if (movie) {
+                if (data.characters)
+                    movie.addCharacters(data.characters)
+                movie.update(data);
+            }
+            res.json({
+                movie: movie || 'No existe pelicula con ese identificador'
+            })
+        } catch (error) {
+            res.status(400).json(error)
+        }
+    },
+    deleteMovie: async (req, res) => {
+        try {
+            const { id } = req.params;
+            const movie = await Movie.findByPk(id);
+            if (movie) {
+                movie.removeCharacters(movie.getCharacters());
+                await Movie.destroy({
+                    where: { id }
+                })
+                return res.json({
+                    msg: 'Se ha borrado la pelicula especificada'
+                })
+            }
+            return res.json({
+                msg: movie? 'Se ha borrado la pelicula' : 'No existe la pelicula buscada'
+            })
+            
+        } catch (error) {
+            res.status(400).json(error)
+        }
+
+
     }
 }
 

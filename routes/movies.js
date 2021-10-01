@@ -4,14 +4,31 @@ var router = express.Router();
 const moviesController = require('../controllers/moviesController');
 const validator = require('../helpers/db-validator');
 const validateFields = require('../middlewares/validate-fields');
+const validateJwt = require('../middlewares/validate-jwt');
 
-router.get('/',moviesController.getAll);
-router.get('/:id',moviesController.getOne);
+router.get('/',[
+    validateJwt
+],moviesController.getAll);
+
+router.get('/:id',[
+    validateJwt
+],moviesController.getOne);
+
 router.post('/',[
+    validateJwt,
     check('name').custom(validator.existsMovieWithName),
     check('genre_id').custom(validator.existsGenreWithId),
-    check('genre','Debe tener un genero asociado').not().isEmpty(),
     validateFields
 ],moviesController.createMovie)
+
+router.put('/:id',[
+    validateJwt,
+    check('name').custom(validator.existsMovieWithName),
+    validateFields
+],moviesController.updateMovie);
+
+router.delete('/:id',[
+    validateJwt
+],moviesController.deleteMovie);
 
 module.exports = router
