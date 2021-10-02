@@ -1,0 +1,550 @@
+{
+	"info": {
+		"_postman_id": "1a810799-3468-4247-9c0f-f7188a40013f",
+		"name": "Alkemy Sequelize",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GENRES",
+			"item": [
+				{
+					"name": "Get all Genres",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiIiLCJpYXQiOjE2MzMwOTgxNTB9.32F7mBSsx3E5BkSe2bE0viHo1mPt7LjYrhqvRy6wd4g",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/genres/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"genres",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Genre By Id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiIiLCJpYXQiOjE2MzMwOTgxNTB9.32F7mBSsx3E5BkSe2bE0viHo1mPt7LjYrhqvRy6wd4g",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/genres/2",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"genres",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Genre",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiIiLCJpYXQiOjE2MzMwOTgxNTB9.32F7mBSsx3E5BkSe2bE0viHo1mPt7LjYrhqvRy6wd4g",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"New Genre\",\r\n    \"image\":\"www.image_for_new_genre.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/genres/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"genres",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit Genre by Id",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-token",
+								"value": "",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Genre Edited\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/genres/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"genres",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Genre by Id",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-token",
+								"value": "",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/genres/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"genres",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "MOVIES",
+			"item": [
+				{
+					"name": "Get all Movies",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiIiLCJpYXQiOjE2MzMxMTQ1ODMsImV4cCI6MTYzMzExODE4M30.jCNJvyD5Wp0cnhtUiKd0QiWrYyGi3iJWrsMoOnhTmq4",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/movies/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"movies",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Movie by Id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiIiLCJpYXQiOjE2MzMxODYxNjYsImV4cCI6MTYzMzE4OTc2Nn0.luJ9Sk2R1X2IJI9qwUiT9JAYA5R0lz6ogk7YyQT-AWs",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/movies/14",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"movies",
+								"14"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Movie",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiIiLCJpYXQiOjE2MzMxODYxNjYsImV4cCI6MTYzMzE4OTc2Nn0.luJ9Sk2R1X2IJI9qwUiT9JAYA5R0lz6ogk7YyQT-AWs",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"La historia de Disney 5\",\r\n    \"image\":\"example\",\r\n    \"created_at\":\"2021-09-21\",\r\n    \"calification\":0,\r\n    \"genre_id\":4\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/movies/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"movies",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit Movie by Id",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiIiLCJpYXQiOjE2MzMxODYxNjYsImV4cCI6MTYzMzE4OTc2Nn0.luJ9Sk2R1X2IJI9qwUiT9JAYA5R0lz6ogk7YyQT-AWs",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"La historia sin fin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/movies/14",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"movies",
+								"14"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Movie by Id",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiIiLCJpYXQiOjE2MzMxMTQ1ODMsImV4cCI6MTYzMzExODE4M30.jCNJvyD5Wp0cnhtUiKd0QiWrYyGi3iJWrsMoOnhTmq4",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/movies/2",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"movies",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "USER",
+			"item": [
+				{
+					"name": "Register User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"ramiro.boza@hotmail.com\",\r\n    \"password\":\"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/auth/register",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"ramiro.boza@hotmail.com\",\r\n    \"password\":\"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/auth/login",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "CHARACTERS",
+			"item": [
+				{
+					"name": "Get all Characters",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiIiLCJpYXQiOjE2MzMwOTgxNTB9.32F7mBSsx3E5BkSe2bE0viHo1mPt7LjYrhqvRy6wd4g",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/characters/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"characters",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Character by Id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiIiLCJpYXQiOjE2MzMwOTgxNTB9.32F7mBSsx3E5BkSe2bE0viHo1mPt7LjYrhqvRy6wd4g",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/characters/6",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"characters",
+								"6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Character",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiIiLCJpYXQiOjE2MzMwOTgxNTB9.32F7mBSsx3E5BkSe2bE0viHo1mPt7LjYrhqvRy6wd4g",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \r\n    \"image\":\"example\",\r\n    \"weight\":10.5,\r\n    \"age\":5,\r\n    \"story\":\"example story\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/characters/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"characters",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit Character by Id",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiIiLCJpYXQiOjE2MzMxMTQ1ODMsImV4cCI6MTYzMzExODE4M30.jCNJvyD5Wp0cnhtUiKd0QiWrYyGi3iJWrsMoOnhTmq4",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"movies\":[14]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/characters/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"characters",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Character by Id",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiIiLCJpYXQiOjE2MzMxMTQ1ODMsImV4cCI6MTYzMzExODE4M30.jCNJvyD5Wp0cnhtUiKd0QiWrYyGi3iJWrsMoOnhTmq4",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/characters/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"characters",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "http://localhost:3000"
+		}
+	]
+}

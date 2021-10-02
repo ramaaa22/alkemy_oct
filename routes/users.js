@@ -6,7 +6,11 @@ const validator = require('../helpers/db-validator');
 const validateFields = require('../middlewares/validate-fields');
 
 
-router.post('/login',usersController.login);
+router.post('/login',[
+  check('email','Debe ingresar un correo electrónico').not().isEmpty(),
+  check('password','Debe ingresar una contraseña').not().isEmpty(),
+  validateFields
+],usersController.login);
 router.post('/register',[
   check('email','No es un correo electrónico válido').isEmail(),
   check('email').custom(validator.existsUserWithEmail),

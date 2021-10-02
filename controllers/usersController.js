@@ -48,6 +48,7 @@ const controller = {
             }
             let password_ok=bcrypt.compareSync(password, user.password);
             if (password_ok) {
+
                 const token = await generateJwt(user._id)
                 res.json({
                     msg: 'ok',
